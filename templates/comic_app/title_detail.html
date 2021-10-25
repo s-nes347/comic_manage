@@ -1,0 +1,8 @@
+{% extends "comic_app/base.html" %}
+{% block content %}
+<h1>{{ title.book_title }}
+<h2>{{ title.author_name }}
+<h3>{{ title.watch_date }}
+<h1><strong>総合点{{ title.evaluation.total_score }}</strong></h1>
+<button type="submit"><a href={% url 'comic_app:update/evaluation' title.evaluation.pk %}>得点変更</a></button>
+{% endblock %}
