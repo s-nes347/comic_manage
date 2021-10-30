@@ -1,0 +1,36 @@
+{% extends "comic_app/newbase.html" %}
+{% load static %}
+{% block content %}
+<div class="mainimg">
+    <img src={% static "comic_app/img/002.jpg" %} alt="メイン画像">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col span-8">
+            <div class="news">
+                <h2>新着情報</h2>
+                {% if title_list %}
+                    {% for title in title_list %}
+                    <ul>
+                        <li>
+                            ~{{ title.watch_number}}巻
+                            <a href="{% url 'comic_app:title_detail' title.id %}">{{ title.book_title }}</a>
+                            <strong>作者</strong> {{ title.author_name}}
+                            <strong>分類</strong> {{ title.category_name}}
+                            <strong>読んだ日</strong> {{ title.watch_date}}
+                        </li>
+                    </ul>
+                    {% endfor %}
+                {% endif %}	
+            </div>
+        </div>
+            <div class="col span-4">
+                <a href=""><img src={% static "comic_app/img/banner.png" %} alt="バナー画像"></a>
+                <a href=""><img src={% static "comic_app/img/banner.png" %} alt="バナー画像"></a>
+                <a href=""><img src={% static "comic_app/img/banner.png" %} alt="バナー画像"></a>
+                <a href=""><img src={% static "comic_app/img/banner.png" %} alt="バナー画像"></a>
+                <a href=""><img src={% static "comic_app/img/banner.png" %} alt="バナー画像"></a>
+            </div>
+    </div>    
+</div>
+{% endblock %}

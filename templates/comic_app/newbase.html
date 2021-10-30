@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>漫画管理サイト</title>
+<link rel="stylesheet" href={% static 'comic_app/css/ress.min.css' %}>
+<link rel="stylesheet" href={% static 'comic_app/css/style.css' %}>
+<script src={% static "comic_app/js/jquery-2.1.4.min.js" %}></script>
+<script src={% static "comic_app/js/style.js" %}></script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href={% static "comic_app/img/favicon.png" %}>
+    
+</head>
+<body>
+<header>    
+<div class="container">
+    <div class="row">
+        <div class="col span-12">
+            <div class="head">
+                <h1><a href={% url 'comic_app:index' %}>漫画管理サイト</a></h1>
+                <div class="telbox">django_test</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-12">
+            <nav>
+                <div id="open"></div>
+                <div id="close"></div>
+                <div id="navi">
+            <ul>
+                <li><a href={% url 'comic_app:index' %}>ホーム</a></li>
+                <li><a href={% url "comic_app:registerauthor" %}>作者登録</a></li>
+                <li><a href={% url "comic_app:registercategory" %}>分類登録</a></li>
+                <li><a href={% url "comic_app:registertitle" %}>作品登録</a></li>
+                <li><a href={% url "comic_app:registerevaluation" %}>得点登録</a></li>
+                <li><a href="subpage.html">お問い合わせ</a></li>
+            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+</header>
+
+<main>
+{% block content%}
+{% endblock %}
+</main>
+
+<footer>
+<div class="container">
+    <div class="row">
+        <div class="col span-4">
+            <h5>フッター１</h5>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+        </div>
+        <div class="col span-4">
+            <h5>フッター２</h5>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+        </div>
+        <div class="col span-4">
+            <h5>フッター３</h5>
+            <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+        </div>
+    </div>
+</div>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            Copyright © <a href="https://popo-design.net" target="_blank">popodesign. </a>
+            
+            </div>    
+        </div>
+    </div>
+</div>
+<p id="pagetop"><a href="#">TOP</a></p>    
+</body>
+</html>
+
